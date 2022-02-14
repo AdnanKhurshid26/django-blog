@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{post.title}}{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "blog/footer.css" %}">
+<link rel="stylesheet" href="{% static "blog/post.css" %}">
+<link rel="stylesheet" href="{% static "blog/header.css" %}">
+<link rel="stylesheet" href="{% static "blog/modal.css" %}">
+{% endblock css %}
+
+{% block content %}
+<div class="backdrop overlay hidden"></div>
+{% include "blog/includes/header.html" %}
+<div class="content">
+    <h1>{{post.title}}</h1>
+    <div class="author">
+        <img src="{% static "blog/img/author.jpg" %}" alt="">
+        <p>By {{post.author}}<br>{{post.created_on}}</p>
+    </div>
+    <div class="title-img">
+        <img src="{{post.image.url}}" alt="">
+    </div>
+    <div class="content-body">
+        <p>{{post.content|safe}}</p>
+        <div class="mid-img">
+            <img src="{% static "blog/img/moon.jpg" %}" alt="">
+        </div>
+
+        
+        <p>{{post.content|safe}}</p>
+    </div>
+</div>
+
+<div class="comments">
+    <h1>Comments</h1>
+    {% for comment in comments %}
+    <div class="comment">
+        <div class="poster">
+            <img src="{% static "blog/img/author.jpg" %}" alt="">
+            <h4>{{comment.user_name}}</h4>
+        </div>
+        <p>
+            {{comment.text}}
+        </p>
+        <h6> {{comment.created_on}} </h6>
+    </div> 
+    {% endfor %}
+    
+</div>
+{% if user.is_authenticated %}
+<form class="comments-form" action="{% url "single_post" post.slug %}" method="POST">
+    {% csrf_token %}
+    <h1>Leave a comment </h1>
+
+    <label for="">Commenting as</label>
+    <input type="text" value="{{request.user}}" readonly>
+
+    <label for="">{{comment_form.text.label}}</label>
+    {{comment_form.text}}
+
+    <button>POST</button>
+</form>
+{% else %}
+<p class="comment-p">Please Login to post comments</p>
+{% endif %}
+<footer>
+    <div class="top">
+        <div class="left">
+            <div class="footer-logo">
+                <img src="{% static "blog/img/logo.png" %}" alt="">
+            </div>
+
+        </div>
+
+        <div class="right">
+            <form class="contact-form" action="">
+                <div>
+                    <div class="input-field">
+                        <label for="">Your Name</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="input-field">
+                        <label for="">Your Email</label>
+                        <input type="email" name="" id="">
+                    </div>
+                </div>
+                <div>
+                    <div class="input-field">
+                        <label for="">Your Message</label>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                    <button class="btn-submit">SUBMIT</button>
+                    <!-- <div class="social">
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fab fa-instagram-square"></i></a>
+                    </div> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="bottom">
+        <p>Copyrights &copy;2021. All Rights Reserved</p>
+    </div>
+</footer>
+<script src="{% static "blog/script.js" %}"></script>
+{% endblock content %}
