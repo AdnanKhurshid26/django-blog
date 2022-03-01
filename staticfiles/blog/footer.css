@@ -1,0 +1,136 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #252525;
+}
+
+.top {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3vw;
+    align-items: center;
+    padding: 4.8rem 9.6rem;
+}
+
+.left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.left img {
+    height: 5vw;
+    margin-bottom: 3.2rem;
+}
+
+.left p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    color: #fff;
+    text-align: center;
+}
+
+.right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2vw;
+    padding: 1vw;
+}
+
+.input-field {
+    /* border: solid 1px red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 1vw;
+}
+
+.input-field label {
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-weight: normal;
+    color: white;
+    border-bottom: solid 2px #D0021B;
+    padding: 0.5rem;
+}
+
+.input-field input {
+    width: 100%;
+    height: 2.3vw;
+    border-radius: 0.1vw;
+    border: solid transparent;
+    padding: 5px;
+    letter-spacing: 1px;
+    font-size: 1vw;
+}
+
+.input-field textarea {
+    width: 100%;
+    padding: 1vw;
+    letter-spacing: 1px;
+    font-size: 1vw;
+    height: 10vw;
+}
+
+.social {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 16rem;
+}
+
+.social a i {
+    font-size: 3.2rem;
+    color: white;
+}
+
+.fa-twitter-square:hover {
+    color: rgb(30, 191, 255);
+}
+
+.fa-facebook-square:hover {
+    color: rgb(55, 105, 243);
+}
+
+.fa-instagram-square:hover {
+    color: rgb(212, 30, 212);
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D0021B;
+    padding: 1vw;
+}
+
+.bottom p {
+    font-size: 1vw;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.btn-submit {
+    font-size: 1vw;
+    font-weight: 500;
+    padding: 0.8vw 1vw;
+}
