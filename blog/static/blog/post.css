@@ -263,7 +263,6 @@ h1 {
     background-color: #D0021B;
     color: white;
     border: solid transparent;
-    margin-bottom: 4vw;
 }
 
 .comments-form button:hover {
@@ -400,21 +399,22 @@ h6 {
     }
     .content {
         padding: 4vw 6vw;
-        padding-top: 10vh;
+        padding-top: 8vh;
     }
     h1 {
-        font-size: 8vw;
+        font-size: 6vw;
         line-height: 1.3;
     }
     .author {
         align-items: center;
-        width: 43vw;
-        height: 12vw;
-        gap: 1.2vw;
-        margin-top: 3.1vw;
+        width: 40vw;
+        height: 10vw;
+        gap: 1vw;
+        margin-top: 3vw;
+        border: solid 1px red;
     }
     .author p {
-        font-size: 2.7vw;
+        font-size: 2.4vw;
     }
     .title-img {
         margin-top: 4vw;
@@ -498,21 +498,21 @@ h6 {
         margin-bottom: 1vw;
     }
     .poster img {
-        height: 6vw;
+        height: 2vw;
         width: auto;
     }
     .poster h4 {
-        font-size: 3.6vw;
+        font-size: 1.3vw;
         font-weight: 600;
     }
     .comment p {
-        font-size: 3vw;
+        font-size: 1.1vw;
         line-height: 1.3;
-        letter-spacing: 0.9px;
-        padding: 0 7vw;
+        letter-spacing: 0.7px;
+        padding: 0 4vw;
     }
     h6 {
-        font-size: 2vw;
+        font-size: 0.9vw;
         font-weight: 600;
         color: #757575;
         padding: 0 4vw;

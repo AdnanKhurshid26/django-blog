@@ -15,6 +15,7 @@ body {
     list-style: none;
     text-decoration: none;
     overflow-x: hidden;
+    background-color: #252525;
 }
 
 @keyframes fadeInAnimation {
@@ -130,10 +131,9 @@ nav {
 .cards {
     width: 100vw;
     padding: 10vw;
-    padding-top: 25vh;
+    padding-top: 15vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    border: solid 1px red;
     gap: 3vw;
 }
 
