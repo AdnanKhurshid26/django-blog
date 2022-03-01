@@ -12,13 +12,14 @@
 <link rel="stylesheet" href="{% static "blog/modal.css" %}">
 
 
+
 {% endblock css %}
 
 {% block content %}
 <div class="backdrop overlay hidden"></div>
 {% include "blog/includes/header.html" %}
 
-<div class="cards">
+<div class="cards" style="padding-top: 15vh;">
     {% for post in all_posts %}{% include "blog/includes/card.html" %}{% endfor %}
   
 
