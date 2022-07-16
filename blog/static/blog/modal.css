@@ -25,6 +25,14 @@
     border-radius: 0.3vw;
 }
 
+.signup-modal p {
+    font-size: 1.2vw;
+}
+
+.signup-modal p a {
+    color: #D0021B;
+}
+
 .signup-form {
     width: 90%;
 }
@@ -97,6 +105,9 @@
         min-height: 60vh;
         padding: 4vw;
         border-radius: 0.6vw;
+    }
+    .signup-modal p {
+        font-size: 3.6vw;
     }
     .input-field-signup {
         gap: 4px;

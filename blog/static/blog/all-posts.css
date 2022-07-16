@@ -130,32 +130,32 @@ nav {
 
 .cards {
     width: 100vw;
-    padding: 10vw;
-    padding-top: 15vh;
+    padding: 3vw 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3vw;
 }
 
 .card {
-    padding: 1.5vw;
+    padding: 1.2vw;
     border-radius: 0.4vw;
+    background-color: #252525;
 }
 
 .card:hover {
-    background-color: #d4d4d4;
+    background-color: #000;
     transition: 0.5s;
 }
 
 .card img {
-    height: 16vw;
+    height: 24vw;
     width: 100%;
     object-fit: cover;
     object-position: center;
 }
 
 .card h2 {
-    font-weight: 600;
+    font-size: 2vw;
     font-family: "Roboto";
     color: #D0021B;
 }
@@ -165,7 +165,11 @@ a p {
     line-height: 1.4;
     font-size: 1vw;
     text-decoration: none;
-    color: #000;
+    color: #fff;
+    max-height: 10vw;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 a {
@@ -192,6 +196,7 @@ a button {
     font-weight: 500;
     font-size: 1vw;
     width: 100%;
+    align-content: flex-end;
 }
 
 button:hover {

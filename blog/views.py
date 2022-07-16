@@ -1,6 +1,6 @@
 
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseBadRequest, HttpResponseRedirect, HttpResponseServerError
 from django.shortcuts import render,get_object_or_404
 from django.contrib.auth.models import User
 from .forms import ContactForm
@@ -26,7 +26,7 @@ def index(request):
 
 class PostsView(ListView):
    model = Post
-   template_name = "blog/all-posts.html"
+   template_name = "blog/posts.html"
    ordering = ["-created_on"]
    context_object_name = "all_posts"
    
@@ -43,19 +43,21 @@ class PostDetailView(View):
       def post(self,request,slug):
               post = Post.objects.get(slug=slug)
               comment_form = CommentForm(request.POST)
+              username = request.user
               if comment_form.is_valid():
                      comment = comment_form.save(commit=False)
                      comment.post = post
+                     comment.user_name = username
                      comment.save()
                      return HttpResponseRedirect(reverse("single_post",args=[slug]))
-                  
               else:
                      context = {
                         "post": post,
                         "comment_form": comment_form,
                         "comments": post.comments.all().order_by("-created_on")
                      }
-                     return render(request,"blog/post.html",context)    
+                     return render(request,"blog/post.html",context)     
+                
          
         
                      

@@ -207,9 +207,9 @@ nav {
 
 .cards {
     width: 100vw;
-    padding: 3vw 10vw;
+    padding: 3vw 15vw;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 3vw;
 }
 
@@ -225,16 +225,30 @@ nav {
 }
 
 .card img {
-    height: 24vw;
-    width: 100%;
+    height: 18vw;
+    width: 16vw;
     object-fit: cover;
     object-position: center;
 }
 
 .card h2 {
-    font-size: 2vw;
+    font-size: 2.6vw;
     font-family: "Roboto";
     color: #D0021B;
+}
+
+.card-top {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1.6vw;
+}
+
+.card-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a p {
@@ -252,13 +266,21 @@ a p {
 a {
     list-style: none;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.5vw;
 }
 
 a:hover {
     list-style: none;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 a button {
@@ -272,7 +294,8 @@ a button {
     letter-spacing: 3px;
     font-weight: 500;
     font-size: 1vw;
-    width: 100%;
+    width: 25%;
+    align-content: flex-end;
 }
 
 button:hover {
@@ -428,7 +451,7 @@ button:hover {
 }
 
 .user-tag {
-    margin-top: 0;
+    /* margin-top: 0;
     padding: 0.7rem 1.4rem;
     min-width: 100px;
     text-transform: uppercase;
@@ -437,7 +460,25 @@ button:hover {
     letter-spacing: 3.2px;
     line-height: 1.1;
     font-family: sans-serif;
+    color: #D0021B; */
+    display: inline-block;
     color: #D0021B;
+    font-size: 0.8vw;
+    font-weight: 800;
+    letter-spacing: 3.2px;
+    line-height: 1.1;
+    padding: 0.7rem 1.4rem;
+    border: solid 2px transparent;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.posts-height-fix {
+    height: 6vw;
+}
+
+.posts-height-fix {
+    height: 3vw;
 }
 
 @media screen and (max-width: 800px) {
@@ -525,7 +566,16 @@ button:hover {
         transition: 0.5s;
     }
     .card img {
-        height: 85vw;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 50vw;
+    }
+    .card-top {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.6vw;
     }
     .card h2 {
         font-size: 7vw;
@@ -538,6 +588,7 @@ button:hover {
         margin-top: 2vw;
         padding: 2.5vw 6vw;
         font-size: 6vw;
+        width: 100%;
     }
     .signup,
     .login {
@@ -600,5 +651,18 @@ button:hover {
     }
     #close-alert:hover {
         color: #D0021B;
+    }
+    .user-tag {
+        font-size: 1.8vh;
+        font-weight: 800;
+        letter-spacing: 3.2px;
+        line-height: 1.3;
+        padding: 0.7vh 1.4vh;
+    }
+    .posts-height-fix {
+        height: 15vw;
+    }
+    .post-height-fix {
+        height: 8vw;
     }
 }

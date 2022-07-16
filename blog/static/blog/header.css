@@ -163,6 +163,7 @@ button:hover {
 .alert p {
     color: #252525;
     width: 95%;
+    font-size: 4vw;
     letter-spacing: 0.5px;
     font-family: "Roboto", sans-serif;
     line-height: 1.3;

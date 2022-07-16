@@ -22,7 +22,7 @@ class Author(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=250)
-    excerpt = models.CharField(max_length=350)
+    excerpt = models.CharField(max_length=100,validators=[MinLengthValidator(50, "Excerpt is too short")])
     image = models.ImageField(upload_to="posts",null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
@@ -31,8 +31,12 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.SET_NULL,related_name='posts', null=True)
     tag = models.ManyToManyField(Tag)
     
+    def __str__(self):
+        return self.title
+    
 class Comment(models.Model):
     user_name = models.CharField(max_length=100)
     text = models.TextField(max_length=500)
-    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name="comments", null=True)
     created_on = models.DateTimeField(auto_now_add=True,null=True)
+    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name="comments", null=True)
+   

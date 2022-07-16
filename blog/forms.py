@@ -10,8 +10,7 @@ class ContactForm(forms.Form):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        exclude = ["post"]
+        exclude = ["post","user_name","created_on"]
         labels = {
-            "user_name": "Your Name",
             "text": "Your comment"
         }
